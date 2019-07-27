@@ -1,45 +1,42 @@
 import React from "react";
 
-const cards = [];
+const cardArr = [];
 
 const test = () => {
     for (let i = 2; i < 15; i++) {
+        let card;
         if (i < 11) {
-            cards.push(i + "S");
-            cards.push(i + "C");
-            cards.push(i + "H");
-            cards.push(i + "D");
+            card = i;
         } else {
-            let faceCard;
             switch(i) {
                 case 11:
-                    faceCard = "J";
+                    card = "J";
                     break;
                 case 12:
-                    faceCard = "Q";
+                    card = "Q";
                     break;
                 case 13:
-                    faceCard = "K";
+                    card = "K";
                     break;
                 case 14:
-                    faceCard = "A";
+                    card = "A";
                     break;
                 default:
-                    console.log("hi");
+                    console.log("Error");
             }
-            cards.push(faceCard + "S")
-            cards.push(faceCard + "C");
-            cards.push(faceCard + "H");
-            cards.push(faceCard + "D");
         }
+        cardArr.push(card + "S");
+        cardArr.push(card + "C");
+        cardArr.push(card + "H");
+        cardArr.push(card + "D");
     }
-    console.log(cards);
+    console.log(cardArr);
 }
 test();
 
 function Card() {
 
-    return <h1>{cards[0]}</h1>;
+    return <h1>{cardArr[0]}</h1>;
 }
 
 export default Card;
