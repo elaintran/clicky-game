@@ -51,12 +51,24 @@ const createDeck = () => {
 }
 createDeck();
 
+const checkSuite = (suite) => {
+    if (suite === "Spade") {
+        return <Spade />;
+    } else if (suite === "Clover") {
+        return <Clover />;
+    } else if (suite === "Diamond") {
+        return <Diamond />;
+    } else {
+        return <Heart />;
+    }
+}
+
 function Card(props) {
     return (
         <div className="card">
-            <Number color="#f54242" number="2" />
+            <Number color={props.color || "#f54242"} number={props.number || "2"} />
             <div className="card-suite">
-                <Heart />
+                {checkSuite(props.suite)}
             </div>
         </div>
     );

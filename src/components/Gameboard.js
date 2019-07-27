@@ -5,6 +5,7 @@ import "../styles/Gameboard.css";
 function Gameboard() {
     return (
         <div className="gameboard">
+            <Card number="5" suite="Heart" color="#f54242"/>
             <Card />
             <Card />
             <Card />
