@@ -1,0 +1,12 @@
+.card {
+    position: relative;
+    background-color: #f9f9f9;
+    width: 110px;
+    height: 150px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px rgba(000, 000, 000, 0.2);
+    margin: 0 20px;
+}

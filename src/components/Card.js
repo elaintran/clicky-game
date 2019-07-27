@@ -1,13 +1,25 @@
 import React from "react";
+import Number from "./Number.js";
+import Spade from "./Spade.js";
+import Clover from "./Clover.js";
+import Heart from "./Heart.js";
+import Diamond from "./Diamond.js";
+import "../styles/Card.css";
 
-const cardDeck = [];
+//array containing all 52 cards
+const deck = [];
+//array containing 13 spade cards
 const easyDeck = [];
 
+//appends suite to card value and push to array
 const createDeck = () => {
+    //i starts at 2 since cards begin at 2; total of 13 different values
     for (let i = 2; i < 15; i++) {
         let card;
+        //assign i for all values 2-10
         if (i < 11) {
             card = i;
+        //creates face cards for any values after 10
         } else {
             switch(i) {
                 case 11:
@@ -26,24 +38,28 @@ const createDeck = () => {
                     console.log("Error");
             }
         }
-        cardDeck.push(card + "S");
-        cardDeck.push(card + "C");
-        cardDeck.push(card + "H");
-        cardDeck.push(card + "D");
+        //add all the suites and push into deck array
+        deck.push(card + "S");
+        deck.push(card + "C");
+        deck.push(card + "H");
+        deck.push(card + "D");
+        //add only spade to the value and push to easy deck
+        easyDeck.push(card + "S");
     }
-    console.log(cardDeck);
+    console.log(deck);
+    console.log(easyDeck);
 }
 createDeck();
 
-const easyVer = () => {
-    for (let j = 0; j < cardDeck.length; j++) {
-        (cardDeck[j].substring(1) === "S" || cardDeck[j].substring(2) === "S") ? easyDeck.push(cardDeck[j]) : console.log("error");
-    }
-    console.log(easyDeck);
-}
-
-function Card() {
-    return <h1>{cardDeck[0]}</h1>;
+function Card(props) {
+    return (
+        <div className="card">
+            <Number color="#f54242" number="2" />
+            <div className="card-suite">
+                <Heart />
+            </div>
+        </div>
+    );
 }
 
 export default Card;

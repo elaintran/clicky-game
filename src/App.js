@@ -1,10 +1,11 @@
 import React from "react";
-import Card from "./components/Card";
+import "./styles/App.css";
+import Gameboard from "./components/Gameboard.js";
 
 function App() {
   return (
     <div className="App">
-      <Card />
+      <Gameboard />
     </div>
   );
 }
