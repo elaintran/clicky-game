@@ -1,8 +1,9 @@
 import React from "react";
 
-const cardArr = [];
+const cardDeck = [];
+const easyDeck = [];
 
-const test = () => {
+const createDeck = () => {
     for (let i = 2; i < 15; i++) {
         let card;
         if (i < 11) {
@@ -25,18 +26,24 @@ const test = () => {
                     console.log("Error");
             }
         }
-        cardArr.push(card + "S");
-        cardArr.push(card + "C");
-        cardArr.push(card + "H");
-        cardArr.push(card + "D");
+        cardDeck.push(card + "S");
+        cardDeck.push(card + "C");
+        cardDeck.push(card + "H");
+        cardDeck.push(card + "D");
     }
-    console.log(cardArr);
+    console.log(cardDeck);
 }
-test();
+createDeck();
+
+const easyVer = () => {
+    for (let j = 0; j < cardDeck.length; j++) {
+        (cardDeck[j].substring(1) === "S" || cardDeck[j].substring(2) === "S") ? easyDeck.push(cardDeck[j]) : console.log("error");
+    }
+    console.log(easyDeck);
+}
 
 function Card() {
-
-    return <h1>{cardArr[0]}</h1>;
+    return <h1>{cardDeck[0]}</h1>;
 }
 
 export default Card;
