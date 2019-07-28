@@ -1,8 +1,11 @@
 import React from "react";
+import "../styles/Diamond.css";
 
 function Diamond() {
     return (
-        <div></div>
+        <div className="diamond">
+            <div className="diamond-shape"></div>
+        </div>
     );
 }
 

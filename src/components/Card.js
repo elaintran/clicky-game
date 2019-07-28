@@ -1,5 +1,4 @@
 import React from "react";
-import Number from "./Number.js";
 import Spade from "./Spade.js";
 import Clover from "./Clover.js";
 import Heart from "./Heart.js";
@@ -66,7 +65,7 @@ const checkSuite = (suite) => {
 function Card(props) {
     return (
         <div className="card">
-            <Number color={props.color || "#f54242"} number={props.number || "2"} />
+            <h1 className="card-number" style={{color: props.color}}>{props.number}</h1>
             <div className="card-suite">
                 {checkSuite(props.suite)}
             </div>

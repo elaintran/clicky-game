@@ -10,3 +10,11 @@
     box-shadow: 5px 5px 5px rgba(000, 000, 000, 0.2);
     margin: 0 20px;
 }
+
+.card-number {
+    font-family: "Work Sans", sans-serif;
+    position: absolute;
+    margin: 0;
+    top: 8px;
+    left: 10px;
+}

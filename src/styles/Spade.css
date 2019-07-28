@@ -1,0 +1,21 @@
+.spade {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.rotated-heart {
+    margin-top: 18px;
+    color: #252525;
+    font-size: 65px;
+    transform: rotate(-180deg);
+}
+
+.stem {
+    position: absolute;
+    height: 50px;
+    width: 10px;
+    border-radius: 2px;
+    background-color: #252525;
+    bottom: 0;
+}

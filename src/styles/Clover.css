@@ -1,0 +1,30 @@
+.clover {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 65px;
+    width: 70px;
+    margin-top: 18px;
+}
+
+.circle {
+    background-color: #252525;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.top-circle {
+    top: 0;
+}
+
+.left-circle {
+    top: 26px;
+    left: 0px;
+}
+
+.right-circle {
+    top: 26px;
+    right: 0px;
+}

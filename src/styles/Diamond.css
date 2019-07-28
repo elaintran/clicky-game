@@ -1,0 +1,12 @@
+.diamond {
+    margin-top: 21px;
+    transform: scaleX(0.9);
+}
+
+.diamond-shape {
+    background-color: #f54242;
+    height: 48px;
+    width: 48px;
+    transform: rotate(45deg);
+    border-radius: 5px;
+}
