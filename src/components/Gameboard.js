@@ -6,12 +6,26 @@ import "../styles/Gameboard.css";
 const deck = [];
 //array containing 13 spade cards
 const easyDeck = [];
+//arr of card suites
 const suite = ["Spade", "Clover", "Heart", "Diamond"];
-//array storing all cards clicked
-// const clickedDeck = [];
+
+//function for appending card to each deck arr
+const createCard = (number, suite, arr, key) => {
+    let deckObj = {};
+    deckObj.key = key;
+    deckObj.number = number;
+    deckObj.suite = suite;
+    if (arr === deck) {
+        (suite === "Spade" || suite === "Clover") ? deckObj.color = "#252525" : deckObj.color = "#f54242";
+    } else {
+        deckObj.color = "#252525";
+    }
+    arr.push(deckObj);
+}
 
 //appends suite to card value and push to array
 const createDeck = () => {
+    let key = 1;
     //i starts at 2 since cards begin at 2; total of 13 different values
     for (let i = 2; i < 15; i++) {
         let card;
@@ -39,68 +53,24 @@ const createDeck = () => {
         }
         //add all the suites and push into deck array
         for (let j = 0; j < suite.length; j++) {
-            let deckObj = {};
-            deckObj.number = card;
-            deckObj.suite = suite[j];
-            (suite[j] === "Spade" || suite[j] === "Clover") ? deckObj.color = "#252525" : deckObj.color = "#f54242";
-            deck.push(deckObj);
+            createCard(card, suite[j], deck, key++);
         }
         //add only spade to the value and push to easy deck
-        let easyDeckObj = {};
-        easyDeckObj.number = card;
-        easyDeckObj.suite = "Spade";
-        easyDeckObj.color = "#252525";
-        easyDeck.push(easyDeckObj);
+        createCard(card, "Spade", easyDeck, (i-1));
     }
     console.log(deck);
     console.log(easyDeck);
 }
 createDeck();
 
-// let cardDisplay = [];
-// const gameboard = React.createElement("div", {"className": "gameboard"});
-
-// const checkSuite = (suite) => {
-//     if (suite === "S") {
-//         return "Spade";
-//     } else if (suite === "C") {
-//         return "Clover";
-//     } else if (suite === "D") {
-//         return "Diamond";
-//     } else if (suite === "Heart") {
-//         return "Heart";
-//     }
-// }
-
-// const game = () => {
-//     //if clicked hard, generate deck arr
-//     //if clicked easy, generate easy deck arr
-//     while (cardDisplay.length !== 4) {
-//         let randomCard = easyDeck[Math.floor(Math.random() * easyDeck.length)];
-//         if (cardDisplay.indexOf(randomCard) === -1) {
-//             cardDisplay.push(randomCard);
-//         }
-//     }
-//     for (let i = 0; i < cardDisplay.length; i++) {
-//         let suite;
-//         (cardDisplay[i].substring(0, 2) === "10") ? suite = cardDisplay[i].substring(2, 3) : suite = cardDisplay[i].substring(1, 2);
-//         let cardElement = React.createElement("Card", {suite: checkSuite(suite)});
-//         // gameboard.appendChild(cardElement);
-//         console.log(gameboard);
-//     }
-//     return gameboard;
-// }
-// game();
-
 function Gameboard() {
     return (
         <div className="gameboard">
             {easyDeck.map(card => (
-                <Card number={card.number} suite={card.suite} color={card.color}/>
+                <Card key={card.key} number={card.number} suite={card.suite} color={card.color}/>
             ))}
         </div>
     );
-    // return {game};
 }
 
 export default Gameboard;
