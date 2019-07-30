@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Spade.css";
+import "./style.css";
 
 function Spade() {
     return (

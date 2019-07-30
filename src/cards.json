@@ -9,8 +9,7 @@
         "number": 3,
         "suite": "Spade",
         "color": "#252525"
-    },
-        {
+    }, {
         "id": 3,
         "number": 4,
         "suite": "Spade",
@@ -22,113 +21,63 @@
         "color": "#252525"
     }, {
         "id": 5,
-        "number": 6,
-        "suite": "Spade",
+        "number": "J",
+        "suite": "Clover",
         "color": "#252525"
     }, {
         "id": 6,
-        "number": 7,
-        "suite": "Spade",
+        "number": "Q",
+        "suite": "Clover",
         "color": "#252525"
     }, {
         "id": 7,
-        "number": 8,
-        "suite": "Spade",
+        "number": "K",
+        "suite": "Clover",
         "color": "#252525"
     }, {
         "id": 8,
-        "number": 9,
-        "suite": "Spade",
+        "number": "A",
+        "suite": "Clover",
         "color": "#252525"
     }, {
         "id": 9,
-        "number": 10,
-        "suite": "Spade",
-        "color": "#252525"
-    }, {
-        "id": 10,
-        "number": "J",
-        "suite": "Spade",
-        "color": "#252525"
-    }, {
-        "id": 11,
-        "number": "Q",
-        "suite": "Spade",
-        "color": "#252525"
-    }, {
-        "id": 12,
-        "number": "K",
-        "suite": "Spade",
-        "color": "#252525"
-    }, {
-        "id": 13,
-        "number": "A",
-        "suite": "Spade",
-        "color": "#252525"
-    },     {
-        "id": 14,
         "number": 2,
         "suite": "Heart",
         "color": "#f54242"
     }, {
-        "id": 15,
+        "id": 10,
         "number": 3,
         "suite": "Heart",
         "color": "#f54242"
     }, {
-        "id": 16,
+        "id": 11,
         "number": 4,
         "suite": "Heart",
         "color": "#f54242"
     }, {
-        "id": 17,
+        "id": 12,
         "number": 5,
         "suite": "Heart",
         "color": "#f54242"
     }, {
-        "id": 18,
-        "number": 6,
-        "suite": "Heart",
-        "color": "#f54242"
-    }, {
-        "id": 19,
-        "number": 7,
-        "suite": "Heart",
-        "color": "#f54242"
-    }, {
-        "id": 20,
-        "number": 8,
-        "suite": "Heart",
-        "color": "#f54242"
-    }, {
-        "id": 21,
-        "number": 9,
-        "suite": "Heart",
-        "color": "#f54242"
-    }, {
-        "id": 22,
-        "number": 10,
-        "suite": "Heart",
-        "color": "#f54242"
-    }, {
-        "id": 23,
+        "id": 13,
         "number": "J",
-        "suite": "Heart",
+        "suite": "Diamond",
         "color": "#f54242"
     }, {
-        "id": 24,
+        "id": 14,
         "number": "Q",
-        "suite": "Heart",
+        "suite": "Diamond",
         "color": "#f54242"
     }, {
-        "id": 25,
+        "id": 15,
         "number": "K",
-        "suite": "Heart",
+        "suite": "Diamond",
         "color": "#f54242"
     }, {
-        "id": 26,
+        "id": 16,
         "number": "A",
-        "suite": "Heart",
+        "suite": "Diamond",
         "color": "#f54242"
     }
 ]

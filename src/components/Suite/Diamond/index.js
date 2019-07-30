@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Diamond.css";
+import "./style.css";
 
 function Diamond() {
     return (

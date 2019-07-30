@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "./Card.js";
 import "../styles/Gameboard.css";
+import Card from "./Card/index.js";
 import cards from "../cards.json";
 
 function Gameboard() {

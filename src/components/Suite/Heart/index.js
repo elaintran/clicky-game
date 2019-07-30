@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Heart.css";
+import "./style.css";
 
 function Heart() {
     return <i className="fas fa-heart heart"></i>;
