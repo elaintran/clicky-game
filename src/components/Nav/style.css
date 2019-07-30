@@ -1,0 +1,10 @@
+.nav {
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.round {
+    padding: 0px 30px;
+    background-color: rgba(000, 000, 000, 0.16);
+}
