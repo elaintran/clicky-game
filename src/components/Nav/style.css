@@ -1,12 +1,12 @@
 .nav {
     margin: 50px 4.5% 0;
     color: white;
-    text-transform: uppercase;
     display: flex;
     align-items: center;
 }
 
 .nav-item {
+    text-transform: uppercase;
     padding: 10px 30px;
     background-color: rgba(000, 000, 000, 0.16);
     border-radius: 10px;
@@ -16,19 +16,14 @@
     font-weight: 700;
 }
 
-.score {
+/* .score {
     margin-left: auto;
-}
+} */
 
 .nav-title {
     margin-right: 15px;
 }
 
-.fa-info-circle {
-    font-size: 45px;
-    margin-left: 25px;
-}
-
-.fa-info-circle:hover {
-    cursor: pointer;
+.message {
+    margin: auto;
 }

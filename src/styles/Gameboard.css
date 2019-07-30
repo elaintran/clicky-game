@@ -5,3 +5,12 @@
     flex-wrap: wrap;
     padding: 40px 0;
 }
+
+.game-message {
+     display: flex;
+     justify-content: center;
+}
+
+.game-message h2 {
+    color: white;
+}

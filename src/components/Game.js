@@ -1,17 +1,15 @@
 import React from "react";
 import Nav from "./Nav/index.js";
-import Modal from "./Modal/index.js";
 import Card from "./Card/index.js";
 import cards from "../cards.json";
 import "../styles/Gameboard.css";
-// import Gameboard from "./Gameboard.js";
 
 class Game extends React.Component {
     state = {
         round: 1,
         score: 0,
         cards: cards,
-        message: ""
+        message: "Don't click on the same card twice!"
     }
 
     //run functions when page loads
@@ -36,50 +34,60 @@ class Game extends React.Component {
             arr[i] = arr[newIndex];
             //the new value is assigned to the old position
             arr[newIndex] = arrValue;
-            // debugger;
         }
         return arr;
     }
 
     handleScore = (id) => {
-        let round; 
-        let score;
         //find the card obj by id
         let clickedCard = this.state.cards.filter(cards => cards.id === id);
         //if card has not been clicked yet
         if (clickedCard[0].clicked !== true) {
-            //switched to clicked
-            clickedCard[0].clicked = true;
-            //update stats
-            round = this.state.round + 1;
-            score = this.state.score + 100;
+            //if clicked all cards once
+            if (this.state.round === 15) {
+                //you win, reset game
+                this.resetGame("You win!");
+            //continue game
+            } else {
+                //switched to clicked
+                clickedCard[0].clicked = true;
+                //update state with new values
+                this.setState({
+                    round: this.state.round + 1,
+                    score: this.state.score + 100,
+                    cards: this.state.cards,
+                    message: "Correct!"
+                });
+            }
         //if clicked on card already clicked
         } else {
-            //reset values
-            this.state.cards.map(cards => cards.clicked = false);
-            round = 1;
-            score = 0;
+            //you lose, reset game
+            this.resetGame("You lose!");
         }
         //shuffle cards every round
         this.shuffle(this.state.cards);
-        //update state with new values
+    }
+
+    resetGame = (message) => {
+        this.shuffle(this.state.cards);
+        this.state.cards.map(cards => cards.clicked = false);
         this.setState({
-            round: round,
-            score: score,
-            cards: this.state.cards
+            round: 1,
+            score: 0,
+            cards: this.state.cards,
+            message: message
         });
     }
 
     render() {
         return (
             <div>
-                <Nav round={this.state.round} score={this.state.score} />
+                <Nav round={this.state.round} message={this.state.message} score={this.state.score} />
                 <div className="gameboard">
                     {this.state.cards.map(card => (
                         <Card key={card.id} id={card.id} number={card.number} suite={card.suite} color={card.color} click={this.handleScore}/>
                     ))}
                 </div>
-                <Modal message={this.state.message} />
             </div>
         );
     }
