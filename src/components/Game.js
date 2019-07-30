@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "./Nav/index.js";
+import Modal from "./Modal/index.js";
 import Card from "./Card/index.js";
 import cards from "../cards.json";
 import "../styles/Gameboard.css";
@@ -9,7 +10,8 @@ class Game extends React.Component {
     state = {
         round: 1,
         score: 0,
-        cards: cards
+        cards: cards,
+        message: ""
     }
 
     //run functions when page loads
@@ -77,6 +79,7 @@ class Game extends React.Component {
                         <Card key={card.id} id={card.id} number={card.number} suite={card.suite} color={card.color} click={this.handleScore}/>
                     ))}
                 </div>
+                <Modal message={this.state.message} />
             </div>
         );
     }

@@ -3,6 +3,7 @@
     color: white;
     text-transform: uppercase;
     display: flex;
+    align-items: center;
 }
 
 .nav-item {
@@ -21,4 +22,13 @@
 
 .nav-title {
     margin-right: 15px;
+}
+
+.fa-info-circle {
+    font-size: 45px;
+    margin-left: 25px;
+}
+
+.fa-info-circle:hover {
+    cursor: pointer;
 }
