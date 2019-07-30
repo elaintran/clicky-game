@@ -44,7 +44,7 @@ class Game extends React.Component {
         //if card has not been clicked yet
         if (clickedCard[0].clicked !== true) {
             //if clicked all cards once
-            if (this.state.round === 15) {
+            if (this.state.round === 16) {
                 //you win, reset game
                 this.resetGame("You win!");
             //continue game
