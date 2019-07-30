@@ -20,7 +20,7 @@ const checkSuite = (suite) => {
 function Card(props) {
     return (
         <div className="card" onClick={() => props.click(props.id)}>
-            <h1 className="card-number" style={{color: props.color}}>{props.number}</h1>
+            <h3 className="card-number" style={{color: props.color}}>{props.number}</h3>
             <div className="card-suite">
                 {checkSuite(props.suite)}
             </div>
