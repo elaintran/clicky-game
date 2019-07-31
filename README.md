@@ -6,3 +6,5 @@ Clicky Game is a memory card game built with React where the objective of the ga
 
 ## Technologies Used
 * [React](https://reactjs.org/)
+* [React-Bootstrap](https://www.npmjs.com/package/react-bootstrap)
+* [Bootstrap](https://www.npmjs.com/package/bootstrap)
