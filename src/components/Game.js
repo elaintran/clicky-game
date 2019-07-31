@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "./Nav/index.js";
 import Card from "./Card/index.js";
 import cards from "../cards.json";
+import GameModal from "./GameModal/index.js";
 import "../styles/Gameboard.css";
 
 class Game extends React.Component {
@@ -9,7 +10,11 @@ class Game extends React.Component {
         round: 1,
         score: 0,
         cards: cards,
-        message: "Don't click on the same card twice!"
+        modalTitle: "Test Your Memory",
+        modalMessage: `Advance through rounds by clicking on
+cards, but make sure you don’t
+select the same card twice!`,
+        show: true
     }
 
     //run functions when page loads
@@ -44,9 +49,9 @@ class Game extends React.Component {
         //if card has not been clicked yet
         if (clickedCard[0].clicked !== true) {
             //if clicked all cards once
-            if (this.state.round === 16) {
+            if (this.state.round === this.state.cards.length) {
                 //you win, reset game
-                this.resetGame("You win!");
+                this.resetGame("You Win!", "Congratulations! Keep that winning streak going and play another round!");
             //continue game
             } else {
                 //switched to clicked
@@ -55,39 +60,56 @@ class Game extends React.Component {
                 this.setState({
                     round: this.state.round + 1,
                     score: this.state.score + 100,
-                    cards: this.state.cards,
-                    message: "Correct!"
+                    cards: this.state.cards
                 });
             }
         //if clicked on card already clicked
         } else {
             //you lose, reset game
-            this.resetGame("You lose!");
+            this.resetGame("You Lose!", "But don't lose hope! Keep trying and remember not to click on the same card!");
         }
         //shuffle cards every round
         this.shuffle(this.state.cards);
     }
 
-    resetGame = (message) => {
+    resetGame = (title, message) => {
         this.shuffle(this.state.cards);
         this.state.cards.map(cards => cards.clicked = false);
         this.setState({
             round: 1,
             score: 0,
             cards: this.state.cards,
-            message: message
+            modalTitle: title,
+            modalMessage: message,
+            show: true
+        });
+    }
+
+    showModal = () => {
+        console.log("clicked");
+        this.setState({ show: true });
+    }
+
+    hideModal = () => {
+        this.setState({
+            show: false,
+            modalTitle: "Test Your Memory",
+            modalMessage: `Advance through rounds by clicking on
+cards, but make sure you don’t
+select the same card twice!`,
         });
     }
 
     render() {
         return (
             <div>
-                <Nav round={this.state.round} message={this.state.message} score={this.state.score} />
+                <Nav round={this.state.round} message={this.state.message} score={this.state.score} show={this.showModal} />
                 <div className="gameboard">
                     {this.state.cards.map(card => (
                         <Card key={card.id} id={card.id} number={card.number} suite={card.suite} color={card.color} click={this.handleScore}/>
                     ))}
                 </div>
+                <GameModal show={this.state.show} close={this.hideModal} title={this.state.modalTitle} message={this.state.modalMessage}/>
             </div>
         );
     }

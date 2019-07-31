@@ -3,10 +3,10 @@
     color: white;
     display: flex;
     align-items: center;
+    text-transform: uppercase;
 }
 
 .nav-item {
-    text-transform: uppercase;
     padding: 10px 30px;
     background-color: rgba(000, 000, 000, 0.16);
     border-radius: 10px;
@@ -16,14 +16,19 @@
     font-weight: 700;
 }
 
-/* .score {
-    margin-left: auto;
-} */
-
 .nav-title {
     margin-right: 15px;
 }
 
-.message {
-    margin: auto;
+.score {
+    margin-left: auto;
+}
+
+.fa-info-circle {
+    font-size: 45px;
+    margin-left: 20px;
+}
+
+.fa-info-circle:hover {
+    cursor: pointer;
 }
