@@ -1,9 +1,9 @@
 import React from "react";
-import Nav from "./Nav/index.js";
-import Card from "./Card/index.js";
-import cards from "../cards.json";
-import GameModal from "./GameModal/index.js";
-import "../styles/Gameboard.css";
+import Nav from "../Nav/index.js";
+import Card from "../Card/index.js";
+import GameModal from "../GameModal/index.js";
+import cards from "../../cards.json";
+import "./style.css";
 
 class Game extends React.Component {
     state = {
@@ -85,11 +85,13 @@ select the same card twice!`,
         });
     }
 
+    //opens modal
     showModal = () => {
         console.log("clicked");
         this.setState({ show: true });
     }
 
+    //resets modal info when closed
     hideModal = () => {
         this.setState({
             show: false,

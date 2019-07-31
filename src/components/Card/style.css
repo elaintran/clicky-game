@@ -25,3 +25,11 @@
     left: 10px;
     font-weight: 700;
 }
+
+@media screen and (max-width: 470px) {
+    .card {
+        margin: 10px 10px 10px;
+        width: 105px;
+        height: 145px;
+    }
+}
